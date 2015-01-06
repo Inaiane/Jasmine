@@ -1,0 +1,35 @@
+<html>
+    <script type="text/javascript">
+        function MaiorEMenor(){
+            var maior;
+            var menor;
+            
+            clazz = {
+                encontra: function(nums){
+                    maior = Number.MIN_VALUE;
+                    menor = Number.MAX_VALUE;
+                    
+                    nums.forEach(function(num) {
+                                 if(num < menor) menor = num;
+                                 else if (num > maior) maior = num;
+                    });
+                },
+                pegaMaior: function(){ 
+                    return maior;
+                },
+                pegaMenor: function(){
+                    return menor;
+                }
+            };
+            return clazz;
+        }
+        
+        var algoritmo = new MaiorEMenor();
+        algoritmo.encontra([7,6,5,4]);
+        
+        console.log(algoritmo.pegaMaior() == 7);
+        console.log(algoritmo.pegaMenor() == 4);
+        
+    
+    </script>
+</html>
